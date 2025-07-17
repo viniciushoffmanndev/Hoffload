@@ -5,6 +5,8 @@ from pytubefix.exceptions import (VideoUnavailable, RegexMatchError, LiveStreamE
 from utils import limpar_url, abrir_pasta
 from convert import converter_para_mp3_ffmpeg
 
+# ----- Download de vídeo com tratamento de erros -----
+
 def atualizar_barra(stream, chunk, bytes_remaining, progress_bar):
     total = stream.filesize
     baixado = total - bytes_remaining
