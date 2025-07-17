@@ -3,6 +3,8 @@ from tkinter import Tk, Label, Entry, Button, Checkbutton, IntVar, StringVar, me
 from PIL import Image, ImageTk
 from downloader import baixar_video
 
+# ----- Interface gráfica com Tkinter + Awthemes -----
+
 def criar_interface():
     global convert_bar, progress_bar
 
