@@ -1,0 +1,36 @@
+# Ambiente virtual
+venv/
+.env/
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.sqlite3
+
+# Pastas de IDEs/editores
+.vscode/
+.idea/
+
+# Arquivos do sistema
+*.DS_Store
+Thumbs.db
+
+# Executáveis gerados
+*.exe
+*.dll
+*.so
+*.deb
+
+# Imagens de interface (se você não quiser subir os ícones)
+*.png
+*.jpg
+
+# Outros
+dist/
+build/
