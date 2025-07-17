@@ -13,6 +13,16 @@ def criar_interface():
     app.title("Hoffload - YouTube Downloader")
     app.geometry("500x300")
     app.resizable(False, False)
+    
+    try:
+        resample_method = Image.Resampling.LANCZOS  # Pillow 9.1.0+
+    except AttributeError:
+        resample_method = Image.ANTIALIAS  # versões antigas
+    
+    dio_path = os.path.join(os.path.dirname(__file__), "assets", "dio_.png")
+    dio_img = Image.open(dio_path).resize((40, 40), resample_method)
+    dio_icon = ImageTk.PhotoImage(dio_img)
+    app.dio_icon = dio_icon  # manter referência ativa
 
     # Variáveis globais
     url_var = StringVar()
@@ -55,5 +65,20 @@ def criar_interface():
     footer.grid(row=7, column=0, columnspan=4, pady=(5, 10))
 
     Label(footer, text="Desenvolvido por Vinicius Hoffmann", fg="gray", bg="#ffffff", font=("Arial", 8)).pack(side="left", padx=(0, 10))
+
+    def abrir_dio():
+        import webbrowser
+        webbrowser.open("https://www.dio.me/users/viniciushoffmanndeveloper")
+
+    Button(
+        footer,
+        image=dio_icon,
+        command=abrir_dio,
+        bg="#ffffff",
+        relief="flat",
+        cursor="hand2"
+    ).pack(side="left", padx=(5, 0))
+
+
 
     app.mainloop()
