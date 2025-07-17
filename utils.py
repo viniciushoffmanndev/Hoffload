@@ -4,6 +4,8 @@ import shutil
 import subprocess
 from urllib.parse import urlparse, parse_qs
 
+# --------- FUNÇÕES UTILITÁRIAS ---------
+
 def limpar_url(url):
     parsed = urlparse(url)
     if 'youtube.com' in parsed.netloc:
